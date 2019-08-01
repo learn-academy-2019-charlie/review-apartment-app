@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { getApartments } from '../api'
 
 class ListApp extends React.Component {
   
@@ -11,10 +12,7 @@ class ListApp extends React.Component {
   }
   
   componentDidMount(){
-    fetch("/apartments")
-    .then(res => {
-      return res.json()
-    })
+    getApartments()
     .then(apartmentsJson => {
       this.setState({apartments: apartmentsJson})
     })

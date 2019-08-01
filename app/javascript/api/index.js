@@ -1,10 +1,10 @@
 let getApartments = () => {
-    fetch("/apartments")
+    return fetch("/apartments")
     .then(resp => {
       return resp.json()
     })
 }
 
-module.exports = {
+export {
     getApartments
 }
